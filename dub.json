@@ -1,0 +1,10 @@
+{
+	"name": "nyinaa",
+	"authors": [
+		"Lawrence Aberba"
+	],
+	"homepage": "https://github.com/aberba/nyinaa",
+	"copyright": "Copyright © 2020, Lawrence Aberba",
+	"description": "A collection of reusable functions & utilities (timers, validators, sanitizers, ranges, logging, ...)",
+	"license": "BSL-1.0"
+}
