@@ -1,9 +1,9 @@
-# Timed
+# Nyinaa
 
-A simple time utility library
+A collection of reusable functions & utilities (timers, validators, sanitizers, ranges, logging, ...)
 
 ```d
-import timed : setInterval, stopInterval;
+import nyinaa.timers : setInterval, stopInterval;
 
 import std.stdio : writeln;
 import std.datetime : seconds;
@@ -23,5 +23,4 @@ void main()
 }
 ```
 ## To-do
-* [x] Proper setInterval with cancellation
-* [ ] setTimeout
+Any generic validator form validation, etc. is welcomed
