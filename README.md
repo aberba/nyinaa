@@ -20,6 +20,10 @@ void main()
 	// stop running setInterval()
 	stopInterval(tid);
 	stopInterval(tid2);
+
+	// OR keep running timers
+	// using import core.thread.osthread: thread_joinAll;
+    // thread_joinAll();
 }
 ```
 ## Collections
