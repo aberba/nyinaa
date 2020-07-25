@@ -22,8 +22,8 @@ unittest
     {
         // "tid" of type Tid can be referenced 
         // to stop setInterval()
-        auto tid = setInterval(1000, { writeln("tick"); });
-        auto tid2 = setInterval(3000, { writeln("tock"); });
+        auto tid = setInterval(1000.seconds, { writeln("tick"); });
+        auto tid2 = setInterval(3000.seconds, { writeln("tock"); });
         Thread.sleep(12.seconds);
 
         // stop running setInterval()
