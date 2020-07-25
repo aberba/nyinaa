@@ -22,5 +22,13 @@ void main()
 	stopInterval(tid2);
 }
 ```
-## To-do
+## Collections
+These are the categories of utilities currently being implemented
+
+* Sanitizers - for sanitizing data, `stripTags()`, ...
+* Validators - for user data (e.g. form data) validation, `isEmail`, `isIp`, ...
+* Timers - time utility function, `setInterval()`, ...
+
+### To-do
 Any generic validator form validation, etc. is welcomed
+
