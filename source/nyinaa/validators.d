@@ -155,3 +155,98 @@ unittest
     assert(isIPv6("2001:db8:0:1:1:1:1:1"));
     assert(!isIPv6("2001:db8:0:1:1:1:1:1xxx"));
 }
+
+//  3: //i,
+//   4: //i,
+//   5: //i,
+//   all: /^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/i
+// 
+
+/**
+* Checks whether a string has a UUID version 3 format 
+* 
+* Params:
+*      uuid = the UUID string to do check on
+*/
+bool isUUIDv3(string uuid)
+{
+    import std : asUpperCase, to;
+
+    auto ctr = ctRegex!(`^[0-9A-F]{8}-[0-9A-F]{4}-3[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$`);
+    return uuid.asUpperCase.to!string.matchFirst(ctr).length == 1;
+}
+
+///
+unittest
+{
+    assert(isUUIDv3("a3bb189e-8bf9-3888-9912-ace4e6543002"));
+    assert(!isUUIDv3("a3bb189e-8bf9-3888-9912-ace4e6543002-123"));
+}
+
+/**
+* Checks whether a string has a UUID version 4 format 
+* 
+* Params:
+*      uuid = the UUID string to do check on
+*/
+bool isUUIDv4(string uuid)
+{
+    import std : asUpperCase, to;
+
+    auto ctr = ctRegex!(`^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$`);
+    return uuid.asUpperCase.to!string.matchFirst(ctr).length == 1;
+}
+
+///
+unittest
+{
+    assert(isUUIDv4("35432af0-214a-43c3-a667-42a79392eea0"));
+    assert(!isUUIDv4("35432af0-214a-43c3-a667-42a79392eea0-123"));
+}
+
+/**
+* Checks whether a string has a UUID version 5 format 
+* 
+* Params:
+*      uuid = the UUID string to do check on
+*/
+bool isUUIDv5(string uuid)
+{
+    import std : asUpperCase, to;
+
+    auto ctr = ctRegex!(`^[0-9A-F]{8}-[0-9A-F]{4}-5[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$`);
+    return uuid.asUpperCase.to!string.matchFirst(ctr).length == 1;
+}
+
+///
+unittest
+{
+    assert(isUUIDv5("a6edc906-2f9f-5fb2-a373-efac406f0ef2"));
+    assert(!isUUIDv5("a6edc906-2f9f-5fb2-a373-efac406f0ef2-123"));
+}
+
+/**
+* Checks whether a string has a UUID format. Matches any UUID format.
+* 
+* Params:
+*      uuid = the UUID string to do check on
+*/
+bool isUUID(string uuid)
+{
+    import std : asUpperCase, to;
+
+    auto ctr = ctRegex!(`^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$`);
+    return uuid.asUpperCase.to!string.matchFirst(ctr).length == 1;
+}
+
+///
+unittest
+{
+    assert(isUUID("35432af0-214a-43c3-a667-42a79392eea0"));
+    assert(isUUID("a6edc906-2f9f-5fb2-a373-efac406f0ef2"));
+    assert(isUUID("a6edc906-2f9f-5fb2-a373-efac406f0ef2"));
+
+    assert(!isUUID("35432af0-214a-43c3-a667-42a79392eea0-123"));
+    assert(!isUUID("a6edc906-2f9f-5fb2-a373-efac406f0ef2-123"));
+    assert(!isUUID("a6edc906-2f9f-5fb2-a373-efac406f0ef2-123"));
+}
