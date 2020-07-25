@@ -1,19 +1,10 @@
-module nyinaa.sanitization;
+module nyinaa.sanitizers;
 
 /***********************************
  * strip tags from an HTML string
  * Params:
  *      input = the HTML string you want to strip tags from
  *      allowedTags = an array of tag names allow in final output
- * 
- *  Example:
- * ---
- *      import nyinaa.sanitization: stripTags;
- *
- *      string html = "<html><b>bold</b></html>";
- *      assert(stripTags(html) == "bold");
- *      assert(stripTags(html, ["html"]) == "<html>bold</html>");
- * ---
  */
 
 string stripTags(string input, in string[] allowedTags = [])
@@ -49,6 +40,7 @@ string stripTags(string input, in string[] allowedTags = [])
     return input.replaceAll!(regexHandler)(regex);
 }
 
+///
 unittest
 {
     assert(stripTags("<html><b>bold</b></html>") == "bold");
