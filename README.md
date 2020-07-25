@@ -16,7 +16,7 @@ To install this package from the [Dub package repository](https://code.dlang.org
 You may also fetch the latest version manually in the command-line:
 
 ```sh
-dub fetch nyinaa
+dub add nyinaa
 ```
 
 ### Example
