@@ -2,6 +2,25 @@
 
 A collection of reusable functions & utilities (timers, validators, sanitizers, ranges, logging, ...)
 
+### Installation
+To install this package from the [Dub package repository](https://code.dlang.org), you may add `nyinaa` as dependency in your `dub.json` file and the package will be downloaded automatically during project build if it's not downloaded already.
+
+```json
+{
+    "dependencies": {
+        "nyinaa": "~>0.0.3"
+    }
+}
+```
+
+You may also fetch the latest version manually in the command-line:
+
+```sh
+dub fetch nyinaa
+```
+
+### Example
+
 ```d
 import nyinaa.timers : setInterval, stopInterval;
 
@@ -32,6 +51,9 @@ These are the categories of utilities currently being implemented
 * Sanitizers - for sanitizing data, `stripTags()`, ...
 * Validators - for user data (e.g. form data) validation, `isEmail`, `isIp`, `isIpv4`, `isIpv6`, ...
 * Timers - time utility function, `setInterval()`, ...
+
+### Documentation
+See the [documentation](https://nyinaa.dpldocs.info/nyinaa.html) for the various functions and examples on how to use them.
 
 ### To-do
 Any generic validator form validation, etc. is welcomed
