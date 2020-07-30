@@ -48,13 +48,9 @@ auto concreteRange(Range)(Range r)
     return Array!(ElementType!Range)(r)[];
 }
 
-/// use for structs with a `present` and `value` member.
-// alias orElse = (a, b) => a.present ? a.value : b;
 
 /**
-    used for two values of same types (integer, strings, struct, etc) and a 
-    custom comparison function, `cmpFunc`. `cmpFunc` is used to determine 
-    whether first argument passes else returns second.
+    use for two values of the same type (integer, string, struct, etc) and a custom comparison function, `cmpFunc`. If `cmpFunc` passes it returns `value` else returns `fallback`.
 
 Params:
     value = the first value used in comparison function
@@ -69,8 +65,15 @@ T orElse(T, alias cmpFunc)(T value, T fallback)
 //
 unittest
 {
-    alias compareFunc = (a) => a == 1;
-    assert(0.orElse!(int, compareFunc)(1) == 1);
+    alias compareFunc = (a) => a == 1; // do  some computation
+
+    int num = 0;
+    assert(num.orElse!(int, compareFunc)(1) == 1); 
+
+    alias compareFunc2 = (a) => a == "yes";
+
+    string data = "no"; // do some processing
+    assert(data.orElse!(string, compareFunc2)("yes") == "yes");
 }
 
 /** alias for .then which is useful for range concatenation
