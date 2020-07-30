@@ -1,11 +1,15 @@
 /++
 Nyinaa (meaning "all" or "everything" in Twi language) is an all-in-one collection of reusable functions & utilities (timers, validators, sanitizers, ranges, logging, ...)
 
+Some of these utility function were gathered from random places including the D forum. Authors are unknown.
+
 Its goal is to provide convenience function commonly used when developing applications such a web development, desktop application and the like. Many functions are not implemented yet. If you want something that is not already available, please submit a pull request OR file an issue at https://github.com/aberba/nyinaa/issues
 +/
 
 module nyinaa;
 
+public import nyinaa.image;
+public import nyinaa.range;
 public import nyinaa.timers;
 public import nyinaa.sanitizers;
 public import nyinaa.validators;
