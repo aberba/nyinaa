@@ -102,7 +102,7 @@ unittest
 {
     import std : readText, writeln;
 
-    const text = readText("./snippets/data-uri.txt");
+    const text = readText("./data/data-uri.txt");
 
     const result = bufferFromDataURI(text);
 
