@@ -52,6 +52,11 @@ These are the categories of utilities currently being implemented
 * Validators - for user data (e.g. form data) validation, `isEmail`, `isIp`, `isIpv4`, `isIpv6`, ...
 * Timers - time utility function, `setInterval()`, ...
 
+## Implemented functions - Validators
+
+* [x] `isEmail()`
+* [x] `isUUID()`
+
 ### Documentation
 See the [documentation](https://nyinaa.dpldocs.info/nyinaa.html) for the various functions and examples on how to use them.
 
