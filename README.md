@@ -66,6 +66,20 @@ Validators - for user data (e.g. form data)
 -   [x] `isUUIDv4()`
 -   [x] `isUUIDv5()`
 
+#### Example
+
+```d
+import nyinaa.validators;
+
+assert(isIP("192.169.0.0"));
+assert(isIP("2001:db8:0:1:1:1:1:1"));
+assert(!isIP("192.169.0.500"));
+assert(!isIP("2001:db8:0:1:1:1:1:1xxx"));
+
+assert(isIPv4("127.0.0.1"));
+assert(!isIPv4("127.0.0.500"));
+```
+
 ## Implemented functions - Timers
 
 Time-based utility functions
